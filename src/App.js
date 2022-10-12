@@ -92,7 +92,7 @@ async function readDb() {
 async function readPlayerDb() {
 
   try{
-  const q = query(collection(db, "players"), where('name', '==', 'long'));
+  const q = query(collection(db, "players"));
   const qSnap = await getDocs(q);
   const tempArr = [];
   qSnap.forEach((doc) => {
@@ -134,6 +134,9 @@ const between = (x, min, max) => {
 
 //handle when user click on image to find object
 const handleClick = (e) => {
+  //do nothing if all items has been found
+  if(hiddenObjectArr.length === 0) return;
+
   const x = e.clientX - e.target.offsetLeft - 40;
   const y = e.clientY - e.target.offsetTop - 40;
 
@@ -179,7 +182,11 @@ const handleSubmit = () =>{
 
 
   writePlayerDb();
-
+  readDb();
+  //wait 1sec then reload page to update db
+  setTimeout(function () {
+        window.location.reload(false);
+    }, 1000);
 }
 
 const handleChange = (e) => {
@@ -221,14 +228,15 @@ const handleChange = (e) => {
           <span className="second">{second}</span>
         </div>
       </div>
+      <div className="score-title">
+        Last 10 players:
+      </div>
       <div className='player-scoreboard'>
         {
-          scoreboardArr
-          .slice(0, 9)
-          .map(player => {
+          scoreboardArr.map(player => {
             return (
               <div key={player.key}>
-                name: {player.name} time: {player.time}
+                Player Name: {player.name}      Time: {player.time}
               </div>
             )
           })

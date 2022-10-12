@@ -5,11 +5,10 @@ body{
 
 .main-container{
   display: grid;
-  grid: 100px 150px 1fr 50px 150px/ 1fr;
+  grid: 100px 100px 1fr 70px 50px 150px / 1fr;
 }
 
 .game-title{
-  background: snow;
   font-size: 3rem;
   text-align: center;
   padding-top: 1rem;
@@ -42,6 +41,13 @@ body{
   background-repeat: no-repeat;
 }
 
+.player-input{
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  font-size: 1.5rem;
+}
+
 .timer-container{
   display: grid;
   justify-content: center;
@@ -49,7 +55,13 @@ body{
 
 .time{
   font-size: 2.5rem;
-  padding-top: 1rem;
+  font-weight: bold;
+  padding-top: 1.5rem;
+}
+
+.score-title{
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .player-scoreboard{
@@ -58,4 +70,8 @@ body{
   font-size: 1.5rem;
   font-weight: bold;
   grid-auto-flow: column;
+}
+
+.footer{
+  text-align: center;
 }
