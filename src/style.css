@@ -1,0 +1,61 @@
+body{
+   justify-content: center;
+   font-family: "Helvetica Neue",Helvetica,Arial;
+}
+
+.main-container{
+  display: grid;
+  grid: 100px 150px 1fr 50px 150px/ 1fr;
+}
+
+.game-title{
+  background: snow;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.img-container{
+  position: relative;
+  border: 1px solid black;
+  justify-self: center;
+  height: 829px;
+  width: 1920px;
+}
+
+.box{
+  position: absolute;
+  background-color: transparent;
+  height: 75px;
+  width: 75px;
+  border: 2.5px solid black;
+  pointer-events: none;
+}
+
+.find-container{
+  display: grid;
+  grid: 150px / repeat(3, 150px);
+  justify-content: center;
+}
+
+.hidden-object{
+  background-repeat: no-repeat;
+}
+
+.timer-container{
+  display: grid;
+  justify-content: center;
+}
+
+.time{
+  font-size: 2.5rem;
+  padding-top: 1rem;
+}
+
+.player-scoreboard{
+  display: grid;
+  grid: repeat(5, 1fr) / repeat(2, 1fr);
+  font-size: 1.5rem;
+  font-weight: bold;
+  grid-auto-flow: column;
+}
