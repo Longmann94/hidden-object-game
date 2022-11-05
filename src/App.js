@@ -5,6 +5,9 @@ import { collection, addDoc, doc, query, where, getDoc, getDocs, Timestamp } fro
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import uniqid from 'uniqid';
 
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 const App = () => {
 
   const isMounted = useRef(false);
@@ -229,20 +232,20 @@ const handleChange = (e) => {
         </div>
       </div>
       <div className="score-title">
-        Last 10 players:
+        <b>Last 10 players:</b>
       </div>
       <div className='player-scoreboard'>
         {
           scoreboardArr.map(player => {
             return (
               <div key={player.key}>
-                Player Name: {player.name}      Time: {player.time}
+                <b>Player Name:</b> {player.name}  <b>Time:</b> {player.time}
               </div>
             )
           })
         }
       </div>
-      <div className='footer'>I do not own any of the images used in this website, created for educational purpose only (c){year} <a href='https://github.com/Longmann94'>Long Mann</a></div>
+      <div className='footer'><p>I do not own any of the images used in this website, created for educational purpose only (c){year} <a href='https://github.com/Longmann94'>Long Mann</a></p></div>
     </div>
   );
 }

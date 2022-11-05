@@ -1,6 +1,7 @@
 body{
    justify-content: center;
    font-family: "Helvetica Neue",Helvetica,Arial;
+   margin: auto;
 }
 
 .main-container{
@@ -9,7 +10,7 @@ body{
 }
 
 .game-title{
-  font-size: 3rem;
+  font-size: 5rem;
   text-align: center;
   padding-top: 1rem;
 }
@@ -68,10 +69,18 @@ body{
   display: grid;
   grid: repeat(5, 1fr) / repeat(2, 1fr);
   font-size: 1.5rem;
-  font-weight: bold;
   grid-auto-flow: column;
+  gap: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .footer{
-  text-align: center;
+  display: grid;
+  justify-items: center;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  color: white;
 }
